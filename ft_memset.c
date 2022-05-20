@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchew <lchew@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 21:29:15 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/20 16:14:14 by lchew            ###   ########.fr       */
+/*   Created: 2022/05/20 16:01:45 by lchew             #+#    #+#             */
+/*   Updated: 2022/05/20 16:22:09 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/*
+**	The memset() function writes len bytes of value c (converted to an unsigned char)
+**	to the string b.
+**
+**	The memset() function returns its first argument.
+*/
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
+void	*ft_memset(void *b, int c, size_t len)
+{
+	char *str;
 
-
-
-#endif
+	str = b;
+	while (len--)
+		*str++ = (unsigned char) c;
+	return (b);
+}

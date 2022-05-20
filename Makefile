@@ -12,10 +12,8 @@
 
 NAME = libft.a
 INC = ./includes
-SRC_DIR = ./srcs/
-SRC = ${SRC_DIR}ft_putchar.c ${SRC_DIR}ft_swap.c \
-		${SRC_DIR}ft_putstr.c ${SRC_DIR}ft_strlen.c \
-		${SRC_DIR}ft_strcmp.c
+SRC_DIR = ./
+SRC = ${SRC_DIR}${wildcard *.c}
 OBJ = $(SRC:%.c=%.o)
 
 LIBCR = ar -rcs

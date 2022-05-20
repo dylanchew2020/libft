@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchew <lchew@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 21:29:15 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/20 16:14:14 by lchew            ###   ########.fr       */
+/*   Created: 2022/05/19 12:31:06 by lchew             #+#    #+#             */
+/*   Updated: 2022/05/20 14:55:37 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/*
+**	The ft_isalnum() function tests for any character for which ft_isalpha or ft_isdigit
+**	is true.
+**
+**	The ft_isalnum() function returns zero if the character tests false and returns non-
+**	zero if the character tests true.
+*/
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-
-
-
-#endif
+int	ft_isalnum(int c)
+{
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
+}

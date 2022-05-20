@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchew <lchew@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 21:29:15 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/20 16:14:14 by lchew            ###   ########.fr       */
+/*   Created: 2022/05/20 15:58:53 by lchew             #+#    #+#             */
+/*   Updated: 2022/05/20 16:01:31 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+/*
+**	The bzero() function writes n zeroed bytes to the string s.  If n is zero, bzero()
+**	does nothing.
+*/
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-
-
-
-#endif
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
