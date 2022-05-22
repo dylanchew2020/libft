@@ -34,3 +34,6 @@ fclean : clean
 	rm -f ${NAME}
 
 re : fclean all
+
+norme : 
+	norminette -R CheckForbiddenSourceHeader ${SRC}
