@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:01:45 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/20 16:22:09 by lchew            ###   ########.fr       */
+/*   Updated: 2022/05/22 14:28:54 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char *str;
-
-	str = b;
 	while (len--)
-		*str++ = (unsigned char) c;
+		*(unsigned char *)b++ = (unsigned char) c;
 	return (b);
 }

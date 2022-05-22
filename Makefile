@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libft.a
-INC = ./includes
+INC = ./
 SRC_DIR = ./
 SRC = ${SRC_DIR}${wildcard *.c}
 OBJ = $(SRC:%.c=%.o)
@@ -23,7 +23,9 @@ CC = gcc -Wall -Werror -Wextra
 all: ${OBJ}
 	${LIBCR} ${NAME} ${OBJ}
 %.o: %.c
-	${CC} -c $< -o $@ -I $(INC)
+	${CC} -c $< -o $@ -I $(INC) 
+	
+#-L -l <-- make the lib file dir able to be accessed anywhere
 
 clean :
 	rm -f ${OBJ}
