@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchew <lchew@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 16:39:25 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/22 17:41:58 by lchew            ###   ########.fr       */
+/*   Created: 2022/05/23 20:36:25 by lchew             #+#    #+#             */
+/*   Updated: 2022/05/23 20:36:25 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /*
 **	The strlcpy() copy strings by taking the full size of the destination buffer
-**	and guarantee NUL-termination if there is room.  Note that room for the NUL 
+**	and guarantee NUL-termination if there is room.  Note that room for the NUL
 **	should be included in dstsize.
 **
-**	strlcpy() copies up to dstsize - 1 characters from the string src to dst, 
-**	NUL-terminating the result if dstsize is not 0. If the src and dst strings 
+**	strlcpy() copies up to dstsize - 1 characters from the string src to dst,
+**	NUL-terminating the result if dstsize is not 0. If the src and dst strings
 **	overlap, the behavior is undefined.
 **
 **	Return the total length of the string they tried to create, that means the
