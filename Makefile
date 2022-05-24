@@ -17,18 +17,19 @@ SRC = ${SRC_DIR}${wildcard *.c}
 OBJ = $(SRC:%.c=%.o)
 
 LIBCR = ar -rcs
-
-CC = gcc -Wall -Werror -Wextra
+HEAD = -I ${INC}
+CFLAG = -Wall -Werror -Wextra $(LIB)
+CC = gcc
 
 all: ${OBJ}
 	${LIBCR} ${NAME} ${OBJ}
 %.o: %.c
-	${CC} -c $< -o $@ -I $(INC) 
+	${CC} -c $< -o $@ -I $(INC)
 	
-#-L -l <-- make the lib file dir able to be accessed anywhere
+#-L ../libft -l ft<-- make the lib file dir able to be accessed anywhere
 
 clean :
-	rm -f ${OBJ}
+	rm -f ${OBJ} *.out
 
 fclean : clean
 	rm -f ${NAME}

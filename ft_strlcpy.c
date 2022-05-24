@@ -13,11 +13,11 @@
 #include "libft.h"
 
 /*
-**	The strlcpy() copy strings by taking the full size of the destination buffer
-**	and guarantee NUL-termination if there is room.  Note that room for the NUL
-**	should be included in dstsize.
+**	The ft_strlcpy() copy strings by taking the full size of the destination 
+**	buffer and guarantee NUL-termination if there is room.  Note that room for 
+**	the NULL should be included in dstsize.
 **
-**	strlcpy() copies up to dstsize - 1 characters from the string src to dst,
+**	ft_strlcpy() copies up to dstsize - 1 characters from the string src to dst,
 **	NUL-terminating the result if dstsize is not 0. If the src and dst strings
 **	overlap, the behavior is undefined.
 **

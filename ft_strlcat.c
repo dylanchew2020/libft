@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+/*
+**	The ft_strlcat() appends string src to the end of dst up to 
+**	(dstsize - strlen(dst) - 1) characters.It takes the full size 
+**	of the buffer, not only the length, and terminates the result 
+**	with NUL as long as is greater than 0.
+**
+**	The ft_strlcat() function returns the total length of the string that 
+**	would have been created if there was unlimited space. This might or 
+**	might not be equal to the length of the string actually created, 
+**	depending on whether there was enough space. This means that you can 
+**	call ft_strlcat() once to find out how much space is required, then 
+**	allocate it if you do not have enough, and finally call ft_strlcat() 
+**	a second time to create the required string.
+*/
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	slen;
