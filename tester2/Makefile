@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alelievr <alelievr@student.42.fr>          +#+  +:+       +#+         #
+#    By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created  2015/04/04 19:22:36 by alelievr          #+#    #+#              #
-#    Updated: 2019/11/03 22:05:40 by tjans         ########   odam.nl          #
+#    Created: 2015/04/04 19:22:36 by alelievr          #+#    #+#              #
+#    Updated: 2022/05/25 22:18:14 by lchew            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #################
 
 #	Libft Makefile path
-LIBFTDIR	=	../libft
+LIBFTDIR	=	../
 
 #	Sources
 SRCDIR		=	./
@@ -55,7 +55,7 @@ OBJDIR		=	obj
 INCDIR		=	./include
 
 #	Libraries
-LIBDIR		=	
+LIBDIR		=
 LIBS		=	-lncurses
 
 #	Assets
@@ -69,12 +69,12 @@ LIBMALLOC	=	malloc.dylib
 TMPLIB		=	$(ASSETDIR)/tmp
 WRAPNAME	=	run_test
 
-FRAMEWORK	=	
+FRAMEWORK	=
 
 #	Compiler
 CFLAGS		=	-Werror -Wall -Wextra# -g3 -fsanitize=address
 CSOFLAGS	=	-shared -fPIC
-CSOFLAGS2	=	
+CSOFLAGS2	=
 CC			=	clang
 CC_SO		=	$(CC)
 
