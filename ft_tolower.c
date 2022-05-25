@@ -16,7 +16,6 @@
 */
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	return (((unsigned int)c < 'A') || ((unsigned int)c > 'Z') ?
+	c : c + 'a' - 'A');
 }

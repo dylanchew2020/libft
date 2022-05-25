@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <string.h>
 
+typedef unsigned long long int	t_op;
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

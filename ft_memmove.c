@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/* 
-**	The ft_emmove() function copies len bytes from string src to string dst.  
-**	The two strings may overlap; the copy is always done in a non-destructive 
+/*
+**	The ft_emmove() function copies len bytes from string src to string dst.
+**	The two strings may overlap; the copy is always done in a non-destructive
 **	manner.
 **
 **	The ft_memmove() function returns the original value of dst.
@@ -23,6 +23,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*d;
 
+	if (!dst && !src)
+		return (NULL);
 	d = dst;
 	if (d > (unsigned char *)src)
 	{

@@ -18,23 +18,33 @@ OBJ = $(SRC:%.c=%.o)
 
 LIBCR = ar -rcs
 HEAD = -I ${INC}
-CFLAG = -Wall -Werror -Wextra $(LIB)
+CFLAG = -Wall -Werror -Wextra ${HEAD}
 CC = gcc
+RM = rm -f
 
-all: ${OBJ}
+all: ${NAME}
+
+${NAME}: ${OBJ}
 	${LIBCR} ${NAME} ${OBJ}
+
 %.o: %.c
-	${CC} -c $< -o $@ -I $(INC)
-	
+	${CC} -c $< -o $@
+
 #-L ../libft -l ft<-- make the lib file dir able to be accessed anywhere
 
 clean :
-	rm -f ${OBJ} *.out
+	${RM} ${OBJ} a.out libft.so
 
 fclean : clean
-	rm -f ${NAME}
+	${RM} ${NAME}
 
 re : fclean all
 
-norme : 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+norme :
 	norminette -R CheckForbiddenSourceHeader ${SRC}
+
+.PHONY: all clean fclean re so norme
