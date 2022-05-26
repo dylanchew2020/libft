@@ -21,8 +21,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char 			*sub;
-	unsigned int	i;
+	char			*sub;
+	size_t			i;
 
 	if (s == NULL)
 		return (NULL);

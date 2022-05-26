@@ -24,7 +24,7 @@ int main(void)
 	/* 3 */ check(!strcmp(s, "tripouille"));
 	/* 4 */ mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
 
-	s = ft_strtrim("   xxxtripouille   xxx", " x");
+	s = ft_strtrim("   xxxtrixpouille   xxx", " x");
 	/* 5 */ check(!strcmp(s, "tripouille"));
 	/* 6 */ mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
 	
