@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:59:10 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/26 16:03:34 by lchew            ###   ########.fr       */
+/*   Updated: 2022/05/27 13:43:20 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	slen = ft_strlen(s1);
 	i = 0;
-	while (*s1 != '\0')
+	while (*s1 != '\0' && ft_strchr(set, *s1) != NULL)
 	{
-		while (set[i] != '\0')
-		{
-			if (ft_strchr(s1, set[i]) != NULL)
-
-		}
-		
-			
+		++s1;
+		--slen;
 	}
-
+	while (slen > 0 && ft_strrchr(set, s1[slen - 1]) != NULL)
+		--slen;
 	array = ft_calloc((slen + 1), sizeof(char));
 	if (!array)
 		return (NULL);
