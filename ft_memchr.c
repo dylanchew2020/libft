@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 19:19:45 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/25 21:43:46 by lchew            ###   ########.fr       */
+/*   Updated: 2022/05/30 10:49:44 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,9 @@
 */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char a;
+	unsigned char	a;
 
 	a = (unsigned char)c;
-/* 	if (n == 0)
-		return (NULL);
-	if (a >= 256)
-		a -= 256; */
 	while (n--)
 	{
 		if (*(unsigned char *)s == a)

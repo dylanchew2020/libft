@@ -11,40 +11,61 @@
 # **************************************************************************** #
 
 NAME = libft.a
-INC = ./
+
+# MANDATORY
 SRC_DIR = ./
-SRC = ${SRC_DIR}${wildcard *.c}
+SRC = $(addprefix $(SRC_DIR)ft_, $(addsuffix .c, \
+		isalpha isdigit isalnum isascii isprint toupper tolower \
+		memset memcpy memmove memchr memcmp atoi bzero calloc\
+		strlen strlcpy strlcat strncmp strchr strrchr strnstr strdup \
+		substr strjoin strtrim split itoa strmapi striteri \
+		putchar_fd putstr_fd putendl_fd putnbr_fd))
 OBJ = $(SRC:%.c=%.o)
 
-LIBCR = ar -rcs
-HEAD = -I ${INC}
-CFLAG = -Wall -Werror -Wextra ${HEAD}
+# BONUS
+B_SRC = $(addprefix $(SRC_DIR)ft_, $(addsuffix .c, \
+		lstnew lstadd_front lstsize lstlast lstadd_back))
+
+#   lstadd_back lstdelone
+# lstclear lstiter lstmap
+B_OBJ = $(B_SRC:%.c=%.o)
+
+# HEADER
+INC = ./
+HEAD = -I $(INC)
+
+# COMPILER
+#-L ../libft -l ft<-- make the lib file dir able to be accessed anywhere
 CC = gcc
+CFLAG = -Wall -Werror -Wextra $(HEAD)
+
+# LIBRARY
+LIBCR = ar -rcs
+
+# REMOVE FILES
 RM = rm -f
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OBJ}
-	${LIBCR} ${NAME} ${OBJ}
+$(NAME): $(OBJ) $(B_OBJ)
+	$(LIBCR) $(NAME) $(OBJ) $(B_OBJ)
 
 %.o: %.c
-	${CC} -c $< -o $@
+	$(CC) -c $< -o $@
 
-#-L ../libft -l ft<-- make the lib file dir able to be accessed anywhere
+bonus: $(B_OBJ)
+	$(LIBCR) $(NAME) $(B_OBJ)
+	
 
 clean :
-	${RM} ${OBJ} a.out libft.so
+	$(RM) $(OBJ) ${B_OBJ}
 
 fclean : clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re : fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
-
 norme :
-	norminette -R CheckForbiddenSourceHeader ${SRC}
+	norminette -R CheckForbiddenSourceHeader $(SRC)
 
-.PHONY: all clean fclean re so norme
+.PHONY: all clean fclean re norme

@@ -19,7 +19,7 @@
 */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *array;
+	void	*array;
 
 	array = malloc(nmemb * size);
 	if (!array)
