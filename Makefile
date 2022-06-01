@@ -26,9 +26,6 @@ OBJ = $(SRC:%.c=%.o)
 B_SRC = $(addprefix $(SRC_DIR)ft_, $(addsuffix .c, \
 		lstnew lstadd_front lstsize lstlast lstadd_back lstdelone \
 		lstclear lstiter lstmap))
-
-#   lstadd_back lstdelone
-# lstclear lstiter lstmap
 B_OBJ = $(B_SRC:%.c=%.o)
 
 # HEADER
@@ -48,8 +45,8 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(B_OBJ)
-	$(LIBCR) $(NAME) $(OBJ) $(B_OBJ)
+$(NAME): $(OBJ)
+	$(LIBCR) $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) -c $< -o $@
@@ -58,19 +55,19 @@ bonus: $(B_OBJ)
 	$(LIBCR) $(NAME) $(B_OBJ)
 	
 
-clean :
+clean:
 	$(RM) $(OBJ) ${B_OBJ}
 
-fclean : clean
+fclean: clean
 	$(RM) $(NAME)
 
-re : fclean all
+re: fclean all
 
-norme :
-	norminette -R CheckForbiddenSourceHeader $(SRC)
+norme:
+	norminette -R CheckForbiddenSourceHeader $(SRC) $(B_SRC)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(B_SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(B_OBJ)
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(B_SRC)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(B_OBJ)
 
 .PHONY: all clean fclean re norme
