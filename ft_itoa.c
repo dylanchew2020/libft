@@ -6,12 +6,19 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:44:50 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/27 22:35:18 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/01 21:39:08 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+**	Allocates (with malloc(3)) and converts the integer received as an argument
+**	into a string. Negative numbers must be handled.
+**	
+**	The ft_itoa() returns a string of the integer. 
+**	Returns NULL if the allocation fails.
+*/
 static int	countlen(int n)
 {
 	unsigned int	len;

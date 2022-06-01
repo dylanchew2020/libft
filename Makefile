@@ -54,7 +54,6 @@ $(NAME): $(OBJ)
 bonus: $(B_OBJ)
 	$(LIBCR) $(NAME) $(B_OBJ)
 	
-
 clean:
 	$(RM) $(OBJ) ${B_OBJ}
 
@@ -66,8 +65,8 @@ re: fclean all
 norme:
 	norminette -R CheckForbiddenSourceHeader $(SRC) $(B_SRC)
 
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(B_SRC)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(B_OBJ)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(B_SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(B_OBJ)
 
 .PHONY: all clean fclean re norme

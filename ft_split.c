@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:19:41 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/27 16:19:34 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/01 22:52:39 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int	countstr(char const *s, char c)
 	int		count;
 
 	count = 0;
-	while (*s)
+	while (*s != '\0')
 	{
 		if (*s != c)
 		{
 			++count;
-			while (*s != c && *s)
+			while (*s != '\0' && *s != c)
 				++s;
 		}
 		else
@@ -40,26 +40,45 @@ static int	countchar(char const *s, char c)
 	int	countchar;
 
 	countchar = 0;
-	while (*s && *s++ != c)
+	while (*s != '\0' && *s++ != c)
 		++countchar;
 	return (countchar);
+}
+
+/*Allocate with ft_calloc memory for each strings.  
+Return i which is the last pointer in 'res' array for NULL terminating.*/
+static unsigned int	putstr(char const *s, char c, char **res)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	while (*s != '\0')
+	{
+		j = 0;
+		if (*s != c)
+		{
+			res[i] = ft_calloc((countchar(s, c) + 1), sizeof(char));
+			while (*s != c && *s)
+				res[i][j++] = *s++;
+			res[i++][j] = '\0';
+		}
+		else
+			++s;
+	}
+	return (i);
 }
 
 /*If failed Malloc to res, return NULL.
 If str argument is empty, return NULL res.
 Otherwise, duplicate str to first string in array res.
 Array res is then NULL terminated.*/
-static char	**emptystr(char const *str, char **res)
+static char	**emptyc(char const *str, char **res)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	if (!res)
-		return (NULL);
-	res[0] = 0;
-	if (*str == '\0')
-		return (res);
 	while (*(str + i))
 		i++;
 	j = 0;
@@ -71,32 +90,8 @@ static char	**emptystr(char const *str, char **res)
 	return (res);
 }
 
-/*Allocate (with Ma)
-Return i which is the last pointer in 'res' array for NULL terminating.*/
-static unsigned int	putstr(char const *s, char c, char **res)
-{
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	while (*s)
-	{
-		j = 0;
-		if (*s != c)
-		{
-			res[i] = malloc(sizeof(char) * countchar(s, c) + 1);
-			while (*s != c && *s)
-				res[i][j++] = *s++;
-			res[i++][j] = '\0';
-		}
-		else
-			++s;
-	}
-	return (i);
-}
-
 /*
-**	Allocates (with malloc(3)) and returns an array of strings obtained by
+**	Allocates with ft_calloc and returns an array of strings obtained by
 **	splitting 's' using the character 'c' as a delimiter. The array must end
 **	with a NULL pointer
 **	
@@ -109,10 +104,13 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	res = malloc(sizeof(char *) * (countstr(s, c) + 1));
-	if (!res || *s == '\0' || c == '\0')
-		return (emptystr(s, res));
-	res[0] = 0;
-	res[putstr(s, c, res)] = 0;
+	res = ft_calloc((countstr(s, c) + 1), sizeof(char *));
+	if (!res)
+		return (NULL);
+	if (*s == '\0')
+		return (res);
+	if (c == '\0')
+		return (emptyc(s, res));
+	res[putstr(s, c, res)] = NULL;
 	return (res);
 }

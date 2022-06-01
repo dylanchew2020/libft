@@ -6,14 +6,14 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:59:10 by lchew             #+#    #+#             */
-/*   Updated: 2022/06/01 14:54:35 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/01 22:21:26 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Allocates (with malloc(3)) and returns a copy of 's1' with the characters
+**	Allocates with ft_calloc and returns a copy of 's1' with the characters
 **	specified in 'set' removed from the beginning and the end of string.
 **	
 **	The ft_substr() returns the pointer to the new string.

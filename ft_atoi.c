@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-**	The atoi() function converts the initial portion of the string pointed to 
+**	The ft_atoi() function converts the initial portion of the string pointed to 
 **	by str to int representation.
 */
 

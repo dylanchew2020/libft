@@ -12,7 +12,7 @@
 
 #include "libft.h"
 /*
-**	Allocates (with malloc(3)) and returns a substring from the string 's'.
+**	Allocates with ft_calloc and returns a substring from the string 's'.
 **	The substring begins at index 'start' and is of maximum size 'len'.
 **	
 **	The ft_substr() returns the pointer to the index 'start' of the substring.

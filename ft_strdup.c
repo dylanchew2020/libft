@@ -12,7 +12,7 @@
 #include "libft.h"
 
 /*
-**	The strdup() function returns a pointer to a new string a of which is 
+**	The ft_strdup() function returns a pointer to a new string a of which is 
 **	a duplicate of the string s.
 **	
 **	The ft_strdup() function returns a pointer to the duplicated string.

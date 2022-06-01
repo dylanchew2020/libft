@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:25:14 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/30 10:48:45 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/01 22:22:36 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 **	Applies the function ’f’ to each character of the string ’s’, and passing 
-**	its index as first argument to create a new string (with malloc(3)) 
+**	its index as first argument to create a new string with ft_calloc 
 **	resulting from successive applications of ’f’.
 **
 **	The ft_strmapi() returns the string created from the successive applications.

@@ -6,16 +6,16 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 11:59:02 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/30 10:49:07 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/01 22:22:57 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
-**	Allocates (with malloc(3)) and returns a new string, which is the result
+**	Allocates with ft_calloc and returns a new string, which is the result
 **	of the concatenation of 's1' and 's2'.
 **	
-**	The ft_substr() returns the pointer to the new string.
+**	The ft_strjoin() returns the pointer to the new string.
 **	Returns NULL if the allocation fails.
 */
 char	*ft_strjoin(char const *s1, char const *s2)

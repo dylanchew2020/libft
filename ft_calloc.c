@@ -20,7 +20,8 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;
-	if((nmemb > 65535 || size > 65535) && (size_t)-1 / nmemb < size)
+
+	if ((nmemb > 65535 || size > 65535) && (size_t)-1 / nmemb < size)
 		return (NULL);
 	array = malloc(nmemb * size);
 	if (!array)
@@ -28,4 +29,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(array, (nmemb * size));
 	return (array);
 }
-

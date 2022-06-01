@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:53:53 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/29 21:57:31 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/01 22:16:00 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	if (s == NULL)
 		return ;
-	while (*s)
+	while (*s != '\0')
 		f(i++, s++);
 }
