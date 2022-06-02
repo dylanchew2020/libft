@@ -8,69 +8,11 @@ ft_memcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
 ft_strlen:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_isalpha:    [OK] 
 ft_isdigit:    [OK] 
-ft_isalnum:    [FAILED] 
-[fail]: your isalnum just doesn't work, REALLY ?!
-Test code:
-	int i;
-
-	i = -1;
-	while (i < 530)
-	{
-		if (!!ft_isalnum(i) != !!((*__ctype_b_loc ())[(int) ((i))] & (unsigned short int) _ISalnum))
-			exit(TEST_FAILED);
-		i++;
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-
-
+ft_isalnum:    [OK] 
 ft_isascii:    [OK] 
 ft_isprint:    [OK] 
-ft_toupper:    [FAILED] 
-[fail]: your toupper just doesn't work, REALLY ?!
-Test code:
-	int i;
-
-	i = -100;
-	while (i < 530)
-	{
-		if (ft_toupper(i) != (__extension__ ({ int __res; if (sizeof (i) > 1) { if (__builtin_constant_p (i)) { int __c = (i); __res = __c < -128 || __c > 255 ? __c : (*__ctype_toupper_loc ())[__c]; } else __res = toupper (i); } else __res = (*__ctype_toupper_loc ())[(int) (i)]; __res; })))
-		{
-				;
-			exit(TEST_FAILED);
-		}
-		i++;
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-     toupper: |156|
-  ft_toupper: |-100|
-param: (-100)
-
-ft_tolower:    [FAILED] 
-[fail]: your tolower just doesn't work, REALLY ?!
-Test code:
-	int i;
-
-	i = -100;
-	while (i < 530)
-	{
-		if (ft_tolower(i) != (__extension__ ({ int __res; if (sizeof (i) > 1) { if (__builtin_constant_p (i)) { int __c = (i); __res = __c < -128 || __c > 255 ? __c : (*__ctype_tolower_loc ())[__c]; } else __res = tolower (i); } else __res = (*__ctype_tolower_loc ())[(int) (i)]; __res; })))
-		{
-				;
-			exit(TEST_FAILED);
-		}
-		i++;
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-     tolower: |156|
-  ft_tolower: |-100|
-param: (-100)
-
+ft_toupper:    [OK] 
+ft_tolower:    [OK] 
 ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strrchr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
