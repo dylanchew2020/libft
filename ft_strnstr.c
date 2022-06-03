@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 20:32:02 by lchew             #+#    #+#             */
-/*   Updated: 2022/05/24 21:42:15 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/02 16:21:23 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	x;
+	size_t	x;
 
 	x = ft_strlen(needle);
 	if (x == 0)

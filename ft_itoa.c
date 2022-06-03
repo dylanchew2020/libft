@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:44:50 by lchew             #+#    #+#             */
-/*   Updated: 2022/06/01 21:39:08 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/02 11:40:25 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,10 @@ char	*ft_itoa(int nbr)
 	char	*result;
 	char	*r;
 
-	result = malloc(sizeof(char) * countlen(nbr) + 1);
+	result = ft_calloc((countlen(nbr) + 1), sizeof(char));
 	if (!result)
 		return (NULL);
 	r = result;
-	*result = '\0';
 	result = putnbr(result, nbr);
 	*result = '\0';
 	return (r);

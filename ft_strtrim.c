@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:59:10 by lchew             #+#    #+#             */
-/*   Updated: 2022/06/01 22:21:26 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/02 16:21:32 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*array;
 	size_t			slen;
-	size_t			setlen;
 	unsigned int	i;
 
 	if (s1 == NULL || set == NULL)

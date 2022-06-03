@@ -6,7 +6,7 @@
 /*   By: lchew <lchew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:19:41 by lchew             #+#    #+#             */
-/*   Updated: 2022/06/01 22:52:39 by lchew            ###   ########.fr       */
+/*   Updated: 2022/06/03 14:28:38 by lchew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static char	**emptyc(char const *str, char **res)
 	while (*(str + i))
 		i++;
 	j = 0;
-	res[0] = malloc(sizeof(char) * i + 1);
+	res[0] = ft_calloc((i + 1), sizeof(char));
 	while (*str)
 		res[0][j++] = *str++;
 	res[0][j] = '\0';

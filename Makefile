@@ -30,12 +30,12 @@ B_OBJ = $(B_SRC:%.c=%.o)
 
 # HEADER
 INC = ./
-HEAD = -I $(INC)
+HEAD = -I$(INC)
 
 # COMPILER
 #-L ../libft -l ft<-- make the lib file dir able to be accessed anywhere
 CC = gcc
-CFLAG = -Wall -Werror -Wextra $(HEAD)
+CFLAGS = -Wall -Werror -Wextra $(HEAD)
 
 # LIBRARY
 LIBCR = ar -rcs
@@ -49,24 +49,20 @@ $(NAME): $(OBJ)
 	$(LIBCR) $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(B_OBJ)
-	$(LIBCR) $(NAME) $(B_OBJ)
+bonus: $(B_OBJ) $(OBJ)
+	$(LIBCR) $(NAME) $(B_OBJ) $(OBJ)
 	
 clean:
 	$(RM) $(OBJ) ${B_OBJ}
 
 fclean: clean
-	$(RM) $(NAME) a.out libft.so
+	$(RM) $(NAME)
 
 re: fclean all
 
 norme:
-	norminette -R CheckForbiddenSourceHeader $(SRC) $(B_SRC)
+	norminette -R CheckForbiddenSourceHeader $(SRC) $(B_SRC) ./libft.h
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(B_SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(B_OBJ)
-
-.PHONY: all clean fclean re norme
+.PHONY: all clean fclean re norme bonus
